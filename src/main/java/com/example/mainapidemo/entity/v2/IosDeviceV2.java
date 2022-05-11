@@ -10,8 +10,13 @@ import javax.persistence.*;
 @Data
 public class IosDeviceV2 extends DeviceV2 {
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ios_data_id", referencedColumnName = "id")
     private IosData iosData;
+
+    public void assignData(IosData iosData){
+        iosData.setIosDeviceV2(this);
+        setIosData(iosData);
+    }
 
 }
