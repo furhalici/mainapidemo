@@ -1,9 +1,6 @@
 package com.example.mainapidemo.entity.v2;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -18,6 +15,7 @@ public class IosData {
     private long id;
 
     @OneToOne(mappedBy = "iosData")
+    @ToString.Exclude
     private IosDeviceV2 iosDeviceV2;
 
     @Column
