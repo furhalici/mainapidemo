@@ -36,16 +36,16 @@ public class MainapidemoApplication implements CommandLineRunner {
     public void run(String... args) {
         log.info("started app");
 
-        AndroidDevice androidDevice = new AndroidDevice();
+        Device androidDevice = new Device();
         androidDevice.setDeviceType(DeviceType.ANDROID);
         androidDevice.setUdId(UUID.randomUUID().toString());
-        androidDevice.assignData(AndroidData.builder().androidVersion("Android2.0.0").build());
+        androidDevice.assignAndroidData(AndroidData.builder().androidVersion("Android2.0.0").build());
         deviceService.save(androidDevice);
 
-        IosDevice iosDevice = new IosDevice();
+        Device iosDevice = new Device();
         iosDevice.setDeviceType(DeviceType.IOS);
         iosDevice.setUdId(UUID.randomUUID().toString());
-        iosDevice.assignData(IosData.builder().iosVersion("Ios2.0.0").build());
+        iosDevice.assignIosData(IosData.builder().iosVersion("Ios2.0.0").build());
         deviceService.save(iosDevice);
 
         testServiceRegistry.getTestService(androidDevice.getDeviceType()).start(androidDevice);
@@ -53,8 +53,5 @@ public class MainapidemoApplication implements CommandLineRunner {
 
         testServiceRegistry.getTestService(androidDevice.getDeviceType()).click(androidDevice);
         testServiceRegistry.getTestService(iosDevice.getDeviceType()).click(iosDevice);
-
-        testServiceRegistry.getTestService(androidDevice.getDeviceType()).end(androidDevice);
-        testServiceRegistry.getTestService(iosDevice.getDeviceType()).end(iosDevice);
     }
 }

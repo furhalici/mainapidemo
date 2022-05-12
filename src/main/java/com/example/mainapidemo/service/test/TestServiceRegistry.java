@@ -5,6 +5,6 @@ import com.example.mainapidemo.entity.DeviceType;
 
 public interface TestServiceRegistry {
 
-    <T extends Device> TestService<T> getTestService(DeviceType deviceType);
+    TestService getTestService(DeviceType deviceType);
 
 }

@@ -18,7 +18,7 @@ public class AndroidData {
     @MapsId
     @JoinColumn(name = "device_id")
     @ToString.Exclude
-    private AndroidDevice androidDevice;
+    private Device device;
 
     @Column
     private String androidVersion;

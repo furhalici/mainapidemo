@@ -18,7 +18,7 @@ public class IosData {
     @MapsId
     @JoinColumn(name = "device_id")
     @ToString.Exclude
-    private IosDevice iosDevice;
+    private Device device;
 
     @Column
     private String iosVersion;
