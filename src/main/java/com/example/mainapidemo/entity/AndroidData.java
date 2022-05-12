@@ -14,7 +14,9 @@ public class AndroidData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(mappedBy = "androidData")
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "device_id")
     @ToString.Exclude
     private AndroidDevice androidDevice;
 
