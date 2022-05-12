@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service("IOS")
 @Slf4j
-class IosTestService implements TestService<IosDevice> {
+class IosTestService extends TestService<IosDevice> {
 
     @Override
     public void start(IosDevice device) {
@@ -18,4 +18,5 @@ class IosTestService implements TestService<IosDevice> {
     public void end(IosDevice device) {
         log.info("end ios test " + device.getIosData());
     }
+
 }

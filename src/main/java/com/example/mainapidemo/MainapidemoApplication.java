@@ -51,6 +51,9 @@ public class MainapidemoApplication implements CommandLineRunner {
         testServiceRegistry.getTestService(androidDevice.getDeviceType()).start(androidDevice);
         testServiceRegistry.getTestService(iosDevice.getDeviceType()).start(iosDevice);
 
+        testServiceRegistry.getTestService(androidDevice.getDeviceType()).click(androidDevice);
+        testServiceRegistry.getTestService(iosDevice.getDeviceType()).click(iosDevice);
+
         testServiceRegistry.getTestService(androidDevice.getDeviceType()).end(androidDevice);
         testServiceRegistry.getTestService(iosDevice.getDeviceType()).end(iosDevice);
     }

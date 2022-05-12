@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service("ANDROID")
 @Slf4j
-class AndroidTestService implements TestService<AndroidDevice> {
+class AndroidTestService extends TestService<AndroidDevice> {
 
 
     @Override
