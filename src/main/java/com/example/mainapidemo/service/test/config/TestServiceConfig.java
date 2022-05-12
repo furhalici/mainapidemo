@@ -1,6 +1,6 @@
-package com.example.mainapidemo.service.v2.test.config;
+package com.example.mainapidemo.service.test.config;
 
-import com.example.mainapidemo.service.v2.test.TestServiceRegistry;
+import com.example.mainapidemo.service.test.TestServiceRegistry;
 import org.springframework.beans.factory.config.ServiceLocatorFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

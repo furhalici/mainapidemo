@@ -1,4 +1,4 @@
-package com.example.mainapidemo.entity.v2;
+package com.example.mainapidemo.entity;
 
 import lombok.*;
 
@@ -16,7 +16,7 @@ public class AndroidData {
 
     @OneToOne(mappedBy = "androidData")
     @ToString.Exclude
-    private AndroidDeviceV2 androidDeviceV2;
+    private AndroidDevice androidDevice;
 
     @Column
     private String androidVersion;

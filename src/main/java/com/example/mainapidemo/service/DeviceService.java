@@ -1,6 +1,6 @@
-package com.example.mainapidemo.service.v2;
+package com.example.mainapidemo.service;
 
-import com.example.mainapidemo.entity.v2.DeviceV2;
+import com.example.mainapidemo.entity.Device;
 import com.example.mainapidemo.repository.DeviceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ public class DeviceService {
 
     private final DeviceRepository deviceRepository;
 
-    public void save(DeviceV2 device){
+    public void save(Device device) {
         deviceRepository.save(device);
     }
 

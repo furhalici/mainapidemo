@@ -1,12 +1,8 @@
 package com.example.mainapidemo;
 
-import com.example.mainapidemo.entity.DeviceType;
-import com.example.mainapidemo.entity.v2.AndroidData;
-import com.example.mainapidemo.entity.v2.AndroidDeviceV2;
-import com.example.mainapidemo.entity.v2.IosData;
-import com.example.mainapidemo.entity.v2.IosDeviceV2;
-import com.example.mainapidemo.service.v2.DeviceService;
-import com.example.mainapidemo.service.v2.test.TestServiceRegistry;
+import com.example.mainapidemo.entity.*;
+import com.example.mainapidemo.service.DeviceService;
+import com.example.mainapidemo.service.test.TestServiceRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -40,13 +36,13 @@ public class MainapidemoApplication implements CommandLineRunner {
     public void run(String... args) {
         log.info("started app");
 
-        AndroidDeviceV2 androidDevice = new AndroidDeviceV2();
+        AndroidDevice androidDevice = new AndroidDevice();
         androidDevice.setDeviceType(DeviceType.ANDROID);
         androidDevice.setUdId(UUID.randomUUID().toString());
         androidDevice.assignData(AndroidData.builder().androidVersion("Android2.0.0").build());
         deviceService.save(androidDevice);
 
-        IosDeviceV2 iosDevice = new IosDeviceV2();
+        IosDevice iosDevice = new IosDevice();
         iosDevice.setDeviceType(DeviceType.IOS);
         iosDevice.setUdId(UUID.randomUUID().toString());
         iosDevice.assignData(IosData.builder().iosVersion("Ios2.0.0").build());

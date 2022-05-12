@@ -1,19 +1,18 @@
-package com.example.mainapidemo.entity.v2;
+package com.example.mainapidemo.entity;
 
-import com.example.mainapidemo.entity.DeviceType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
-@Entity(name = "device_v2")
+@Entity(name = "device")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Data
 @EqualsAndHashCode(of = "id")
 @DiscriminatorColumn(name = "device_type", discriminatorType = DiscriminatorType.STRING)
-public class DeviceV2 {
+public class Device {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(unique = true)
